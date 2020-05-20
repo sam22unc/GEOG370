@@ -6,27 +6,81 @@
     <title>Projections</title>
 </head>
 <body>
+    <center>
     <h1>In this project I learned how to display images in different projections</h1>
     
-    <h2 style="color:red">Describe in your own words how you displayed the map in different projections using QGIS</h2>
-    <p>You can write a paragraph here</p>
+    <!--<h2 style="color:red">Describe in your own words how you displayed the map in different projections using QGIS</h2>-->
+    <p>A map of the world was altered based on different projections in QGIS using the Indicatrix mapper to model the distortions. The projections themselves were altered by changing the Coordinate Reference System(CRS).</p>
     
-    <h2>WGS84 Projection</h2>
-    <h3>Some observations</h3>
-    <a href=".//maps/4326.png">
-    <img src=".//maps/4326.png" alt="WGS84" width='500px'>
-    </a>
+    <br>
+    </center>
 
-    <h2>Aitoff Projection</h2>
-    <h3>Some observations</h3>
-    <a href=".//maps/54043.png">
-    <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
-    </a>
+    <div style="display: inline-block; float:left">
+        <h2>WGS84 Projection</h2>
+        <p>preserves direction</p>
+        <a href=".//maps/4326.png">
+        <img src=".//maps/4326.png" alt="WGS84" width='500px'>
+        </a>
+
+        <h2>Pseudo Mercador Projection</h2>
+        <p>preserves shape, direction</p>
+        <a href=".//maps/3857.png">
+        <img src=".//maps/3857.png" alt="Pseudo Mercador" width='500px'>
+        </a>
+
+        <h2>World Cyllindrical Equal Area Projection</h2>
+        <p>preserve area, direction</p>
+        <a href=".//maps/54034.png">
+        <img src=".//maps/54034.png" alt="World Cyllindrical Equal Area" width='500px'>
+        </a>
+
+        <h2>North Pole Azimuthal Equidistant Projection</h2>
+        <p>preserve direction and distance</p>
+        <a href=".//maps/102016.png">
+        <img src=".//maps/102016.png" alt="North Pole Azimuthal Equidistant" width='500px'>
+        </a>
+
+        <h2>World From Space Projection</h2>
+        <p>mostly preserves all, cannot be fully viewed in 2D</p>
+        <a href=".//maps/102038.png">
+        <img src=".//maps/102038.png" alt="World From Space" width='500px'>
+        </a>
+     </div>
+     <div style="display: inline-block; float:right">
+        <h2>Aitoff Projection</h2>
+        <p>preserves area</p>
+        <a href=".//maps/54043.png">
+        <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
+        </a>
+
+        <h2>Sphere Winkel I</h2>
+        <p>compromises on all</p>
+        <a href=".//maps/53018.png">
+        <img src=".//maps/53018.png" alt="Sphere Winkel I" width='500px'>
+        </a>
+
+        <h2>World Equidistant Conic Projection</h2>
+        <p>preserve distance</p>
+        <a href=".//maps/54027.png">
+        <img src=".//maps/54027.png" alt="World Equidistant Conic" width='500px'>
+        </a>
+
+        <h2>Wagner IV Projection</h2>
+        <p>preserve area</p>
+        <a href=".//maps/54074.png">
+        <img src=".//maps/54074.png" alt="Wagner IV" width='500px'>
+        </a>
+
+
+     </div>
     
-    <h2 style="color:red">Now, you should <u>add the following projections on your own:</u></h2>
-    <h3>EPSG: 3857, 53018, 54034, 54027, 102016, and two additional projections that you choose.</h3>
-    <p></p>
+    <!--<h2 style="color:red">Now, you should <u>add the following projections on your own:</u></h2>-->
+    <!--<p>EPSG: 3857, 53018, 54034, 54027, 102016, and two additional projections that you choose.</p>-->
+    <div style="clear: both;">
+    <br>
     <h2>Data used for this project</h2>
     <a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip"> Download Natrual Earth 1:10m Cultural Vector </a>
+    <p></p>
+    </div>
 </body>
 </html>
