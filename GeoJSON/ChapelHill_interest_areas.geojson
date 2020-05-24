@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "Chapel Hill Interest Areas",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "name": "Morehead Planetarium", "notes": "I love space and took my dad here for Christmas." }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -79.050537316638469, 35.913863477204195 ] ] } },
+{ "type": "Feature", "properties": { "id": 2, "name": "Undergrad Library", "notes": "I can be found here most days of the week studying in the basement." }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -79.049074559343254, 35.909762960852071 ] ] } },
+{ "type": "Feature", "properties": { "id": 3, "name": "Student Union", "notes": "Great hangout place and home of Alpine Bagels, one of the best places to eat on campus." }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -79.047683740931419, 35.910210580570819 ] ] } },
+{ "type": "Feature", "properties": { "id": 4, "name": "Kenan Memorial Stadium", "notes": "This is the field of our amazing football team and holds a lot of great game memories." }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -79.04786758474448, 35.906961341005243 ] ] } },
+{ "type": "Feature", "properties": { "id": 5, "name": "Carmichael Residence Hall", "notes": "This is the residence hall that I will hopefully be living in next year." }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -79.045877275637892, 35.908300203556863 ] ] } }
+]
+}
