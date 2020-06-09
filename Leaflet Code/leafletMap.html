@@ -23,10 +23,13 @@
     </style>
     
     <script>
-        var map = L.map('mapid').setView([35.91, -79.05], 17);
+        var map = L.map('mapid').setView([33.7488, -84.38813], 8);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map)
         L.marker([35.911271, -79.049807]).addTo(map)
             .bindPopup("CH 322")
+            .openPopup();
+        L.marker([33.7488, -84.38813]).addTo(map)
+            .bindPopup("Urban Sprawl in Atlanta")
             .openPopup();
         
         // L.geoJSON(uncwell).addTo(map)
