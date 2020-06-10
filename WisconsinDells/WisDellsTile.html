@@ -103,7 +103,7 @@
         .bindPopup("<h3>Mt. Olympus</h3><img src='https://www.mtolympuspark.com/wp-content/uploads/2016/08/lost-city-1-350x200-c-default.jpg'width='100px'/><br/>Created 2004<br/>Water and theme park with a greek mythology theme.")
         .addTo(map);
         
-      L.geoJSON(river, {
+      var wisRiver = L.geoJSON(river, {
         pointToLayer: function (feature, latlng) {
         return L.marker(latlng, {});}})
         .bindPopup("<h3>Wisconsin River</h3><img src='https://mk0dellsducks97ba1v8.kinstacdn.com/wp-content/uploads/2016/05/Gift-Shop-Blog1.jpg'width='100px'/>")
@@ -121,6 +121,7 @@
         "Paul Bunyan's" : PaulBunyan,
         "Top Secret" : TopSecret,
         "Wisconsin Ducks" : quackQuack,
+        "Wisconsin River" : wisRiver,
         "Wilderness Resort" : wild,
         "Wilderness on the Lake" : wildLake,
         "Noah's Ark" : noah,
