@@ -36,15 +36,39 @@
       var PBPopup = "<h3>Paul Bunyan's</h3><img src='https://www.dells.com/wp-content/uploads/2015/07/Paul-Bunyans-Cook-Shanty-Blog1.png'width='100px'/><br/>Lumberjack themed breakfast restaurant around the folk hero.";
       var TSPopup = "<h3>Top Secret</h3><img src='https://www.wisdells.com/member-media/attr/top_secret_01.jpg'width='100px'/><br/>An upside down replica of the White House with a mystery.";
       var duckPopup = "<h3>Wisconsin Ducks</h3><img src='https://i2.wp.com/amusementtoday.com/wp-content/uploads/2015/05/lake_delton_splashdown.jpg'width='100px'/><br/>The original amphibious Wisconsin tour boats for fun on land and in water.";
-      var PaulBunyan = L.marker([43.62547, -89.78926])
+      var PBIcon = L.icon({
+        iconUrl: 'marker-icon-red.png',
+        shadowUrl: 'marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      })
+      var TSIcon = L.icon({
+        iconUrl: 'marker-icon-gold.png',
+        shadowUrl: 'marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      })
+      var duckIcon = L.icon({
+        iconUrl: 'marker-icon-green.png',
+        shadowUrl: 'marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      })
+      var PaulBunyan = L.marker([43.62547, -89.78926], {icon: PBIcon})
         .bindPopup(PBPopup)
         .openPopup()
         .addTo(map);
-      var TopSecret = L.marker([43.61903, -89.784765])
+      var TopSecret = L.marker([43.61903, -89.784765], {icon: TSIcon})
         .bindPopup(TSPopup)
         .openPopup()
         .addTo(map);
-      var quackQuack = L.marker([43.61404, -89.788005])
+      var quackQuack = L.marker([43.61404, -89.788005], {icon: duckIcon})
         .bindPopup(duckPopup)
         .openPopup()
         .addTo(map);
@@ -98,7 +122,7 @@
       var olympus = L.geoJSON(mtOlympus, {
         pointToLayer: function (feature, latlng) {
         return L.marker(latlng, {});},
-        style: {"color": "#d7191c"}
+        style: {"color": "#7851a9"}
         })
         .bindPopup("<h3>Mt. Olympus</h3><img src='https://www.mtolympuspark.com/wp-content/uploads/2016/08/lost-city-1-350x200-c-default.jpg'width='100px'/><br/>Created 2004<br/>Water and theme park with a greek mythology theme.")
         .addTo(map);
