@@ -33,9 +33,9 @@
       var map = L.map('map').setView([43.610972359263194, -89.77848961392023], 14.0);
      
       { // Points of Interest
-      var PBPopup = "Paul Bunyan's<br/><img src='https://www.dells.com/wp-content/uploads/2015/07/Paul-Bunyans-Cook-Shanty-Blog1.png'width='100px'/>";
-      var TSPopup = "Top Secret<br/><img src='https://www.wisdells.com/member-media/attr/top_secret_01.jpg'width='100px'/>";
-      var duckPopup = "Wisconsin Ducks<br/><img src='https://i2.wp.com/amusementtoday.com/wp-content/uploads/2015/05/lake_delton_splashdown.jpg'width='100px'/>";
+      var PBPopup = "<h3>Paul Bunyan's</h3><img src='https://www.dells.com/wp-content/uploads/2015/07/Paul-Bunyans-Cook-Shanty-Blog1.png'width='100px'/><br/>Lumberjack themed breakfast restaurant around the folk hero.";
+      var TSPopup = "<h3>Top Secret</h3><img src='https://www.wisdells.com/member-media/attr/top_secret_01.jpg'width='100px'/><br/>An upside down replica of the White House with a mystery.";
+      var duckPopup = "<h3>Wisconsin Ducks</h3><img src='https://i2.wp.com/amusementtoday.com/wp-content/uploads/2015/05/lake_delton_splashdown.jpg'width='100px'/><br/>The original amphibious Wisconsin tour boats for fun on land and in water.";
       var PaulBunyan = L.marker([43.62547, -89.78926])
         .bindPopup(PBPopup)
         .openPopup()
@@ -69,35 +69,44 @@
       }
 
       { // Import geoJSONs for resorts and river
+      
       var wild = L.geoJSON(wilderness, {
         pointToLayer: function (feature, latlng) {
-        return L.marker(latlng, {});}})
-        .bindPopup("Wilderness Resort")
+          return L.marker(latlng, {});},
+        style: {"color": "#1a9641"}
+        })
+        .bindPopup("<h3>Wilderness Resort</h3><img src='https://media-cdn.tripadvisor.com/media/photo-p/09/e2/9c/20/aerial-photo-of-wilderness.jpg'width='100px'/><br/>Created 1995<br/>America's Largest Waterpark Resort located in Wisconsin Dells")
         .addTo(map);
 
       
       var wildLake = L.geoJSON(wildernessLake, {
         pointToLayer: function (feature, latlng) {
-        return L.marker(latlng, {});}})
-        .bindPopup("Wilderness on the Lake")
+        return L.marker(latlng, {});},
+        style: {"color": "#2b83ba"}
+        })
+        .bindPopup("<h3>Wilderness on the Lake</h3><img src='https://media-cdn.tripadvisor.com/media/photo-s/08/d6/11/7c/photo0jpg.jpg'width='100px'/><br/>Created 2003<br/>Secluded part of the water park located on a serene lake.")
         .addTo(map);
         
       var noah = L.geoJSON(noahArk, {
         pointToLayer: function (feature, latlng) {
-        return L.marker(latlng, {});}})
-        .bindPopup("Noah's Ark")
+        return L.marker(latlng, {});},
+        style: {"color": "#fdae61"}
+        })
+        .bindPopup("<h3>Noah's Ark</h3><img src='https://i.pinimg.com/originals/b0/a1/30/b0a13073034a7d92ac8d0c27b7a2818c.jpg'width='100px'/><br/>Created 1995<br/>A large waterpark with America's first near-vertical looping waterslide.")
         .addTo(map);
         
       var olympus = L.geoJSON(mtOlympus, {
         pointToLayer: function (feature, latlng) {
-        return L.marker(latlng, {});}})
-        .bindPopup("Mt. Olympus")
+        return L.marker(latlng, {});},
+        style: {"color": "#d7191c"}
+        })
+        .bindPopup("<h3>Mt. Olympus</h3><img src='https://www.mtolympuspark.com/wp-content/uploads/2016/08/lost-city-1-350x200-c-default.jpg'width='100px'/><br/>Created 2004<br/>Water and theme park with a greek mythology theme.")
         .addTo(map);
         
       L.geoJSON(river, {
         pointToLayer: function (feature, latlng) {
         return L.marker(latlng, {});}})
-        .bindPopup("Wisconsin River")
+        .bindPopup("<h3>Wisconsin River</h3><img src='https://mk0dellsducks97ba1v8.kinstacdn.com/wp-content/uploads/2016/05/Gift-Shop-Blog1.jpg'width='100px'/>")
         .addTo(map);
       }
 
