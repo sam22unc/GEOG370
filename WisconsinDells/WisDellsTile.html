@@ -30,12 +30,15 @@
 <body>
   <div id="map"></div>
   <script>
+    // new Map
       var map = L.map('map').setView([43.610972359263194, -89.77848961392023], 14.0);
      
       { // Points of Interest
+    // Custom Popups with text and image
       var PBPopup = "<h3>Paul Bunyan's</h3><img src='https://www.dells.com/wp-content/uploads/2015/07/Paul-Bunyans-Cook-Shanty-Blog1.png'width='100px'/><br/>Lumberjack themed breakfast restaurant around the folk hero.";
       var TSPopup = "<h3>Top Secret</h3><img src='https://www.wisdells.com/member-media/attr/top_secret_01.jpg'width='100px'/><br/>An upside down replica of the White House with a mystery.";
       var duckPopup = "<h3>Wisconsin Ducks</h3><img src='https://i2.wp.com/amusementtoday.com/wp-content/uploads/2015/05/lake_delton_splashdown.jpg'width='100px'/><br/>The original amphibious Wisconsin tour boats for fun on land and in water.";
+    // Custom Icons from png  
       var PBIcon = L.icon({
         iconUrl: 'marker-icon-red.png',
         shadowUrl: 'marker-shadow.png',
@@ -60,6 +63,7 @@
         popupAnchor: [1, -34],
         shadowSize: [41, 41]
       })
+    // place markers with location, icon, and popup
       var PaulBunyan = L.marker([43.62547, -89.78926], {icon: PBIcon})
         .bindPopup(PBPopup)
         .openPopup()
@@ -75,6 +79,7 @@
       }
       
       { // Tile Layers
+    // import online tile layers
       var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	      maxZoom: 19,
 	      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -83,7 +88,7 @@
       var ESRI = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
       });
-      
+    // import custom georeferenced tile layer
       var photo1975 = L.tileLayer('{z}/{x}/{y}.png', {
         minZoom: 12,
         maxZoom: 16,
@@ -93,7 +98,7 @@
       }
 
       { // Import geoJSONs for resorts and river
-      
+    // import vector features from geoJSONs and add popups
       var wild = L.geoJSON(wilderness, {
         pointToLayer: function (feature, latlng) {
           return L.marker(latlng, {});},
