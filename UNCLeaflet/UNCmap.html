@@ -22,6 +22,8 @@
        height: 100%;
     }
   </style>
+  <script src="DeanDome.geojson"></script>
+  <script src="manning.geojson"></script>
 </head>
 <body>
   <div id="map"></div>
@@ -51,13 +53,61 @@
         .openPopup()
         .addTo(map);
 
+      var dome = L.geoJSON(DeanDome, {
+        pointToLayer: function (feature, latlng) {
+          return L.marker(latlng, {});},
+        style: {"color": "#1a9641"}
+        })
+        .bindPopup("<h3>Dean Dome</h3><img src='https://goheels.com/images/2018/2/8/SmithCenter_du_37.jpg'width='100px'/><br/>Created 1995<br/>Basketball Stadium at the University of National Champions")
+        .addTo(map);
+      var manning = L.geoJSON(manningDrive, {
+        pointToLayer: function (feature, latlng) {
+          return L.marker(latlng, {});}})
+        .bindPopup("<h3>Manning Drive</h3>")
+        .addTo(map);
+      
+
+      // Custom Popups with text and image
+      var CPopup = "<h3>Craige</h3><img src='https://www.myatlascms.com/map/lib/image-cache/i.php?mapId=111&image=111/171113_0246.jpg&w=900&h=508&r=1'width='100px'/><br/>Crusty Craige";
+      var MPopup = "<h3>Morrison</h3><img src='https://pbs.twimg.com/media/DpKe_sXXoAA7hgc.jpg'width='100px'/><br/>Home of the amazing art studio";
+      // Custom Icons from png  
+      var CIcon = L.icon({
+        iconUrl: 'marker-icon-green.png',
+        shadowUrl: 'marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      });
+      var MIcon = L.icon({
+        iconUrl: 'marker-icon-gold.png',
+        shadowUrl: 'marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      });
+      // place markers with location, icon, and popup
+      var Craige = L.marker([35.902746, -79.045095], {icon: CIcon})
+        .bindPopup(CPopup)
+        .openPopup()
+        .addTo(map);
+      var Morrison = L.marker([35.90451, -79.046179], {icon: MIcon})
+        .bindPopup(MPopup)
+        .openPopup()
+        .addTo(map);
+
       var tiles = {
         "Open Street Map" : OSM,
         "1933 UNC" : photo,
       };
 
       var markers = {
-        "Hojo" : hojo
+        "Hojo" : hojo,
+        "Craige" : Craige,
+        "Morrison" : Morrison,
+        "Dean Dome" : dome,
+        "Manning Drive" : manning
       };
 
       L.control.layers(tiles, markers).addTo(map);
